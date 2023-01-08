@@ -7,11 +7,10 @@ class PetCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return SizedBox(
-      height: size.height * .8,
-      child: ListView.builder(
-        itemBuilder: (context, index) => const Padding(
+    //final size = MediaQuery.of(context).size;
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) => const Padding(
           padding: EdgeInsets.only(bottom: 12, left: 16, right: 16),
           child: PetCard(
             petMainImage: PetImages.petMainImage,
