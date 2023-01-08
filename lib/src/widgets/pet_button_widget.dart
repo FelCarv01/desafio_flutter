@@ -17,14 +17,14 @@ class PetButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: const BoxDecoration(
         color: PetColors.petPrimary,
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderRadius: BorderRadius.all(Radius.circular(22)),
       ),
       child: InkWell(
         onTap: () {},
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 8),
+              padding: const EdgeInsets.only(right: 8, left: 8),
               child: Icon(
                 iconData,
                 size: 26,

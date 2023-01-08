@@ -1,9 +1,10 @@
-import 'package:desafio_flutter/src/widgets/pet_button.dart';
+import 'package:desafio_flutter/src/widgets/pet_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class PetCategoryList extends StatelessWidget {
   PetCategoryList({super.key});
   final categories = <String>[
+    'settings', //to build a buttom tune
     'Cachorros',
     'gatos',
     'passaros',
@@ -11,20 +12,32 @@ class PetCategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .1,
+    final size = MediaQuery.of(context).size;
+    return Container(
+      color: Colors.transparent,
+      height: size.height * .1,
       child: ListView.builder(
         itemCount: categories.length,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(12),
-          child: PetButton(
-            iconData: Icons.pets,
-            animal: categories[index],
-          ),
-        ),
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return const Padding(
+              padding: EdgeInsets.all(12),
+              child: PetButton(
+                iconData: Icons.tune,
+              ),
+            );
+          }
+          return Padding(
+            padding: const EdgeInsets.all(12),
+            child: PetButton(
+              iconData: Icons.pets,
+              animal: categories[index],
+            ),
+          );
+        },
       ),
     );
   }
