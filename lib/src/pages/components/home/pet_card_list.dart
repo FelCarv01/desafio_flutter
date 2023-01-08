@@ -12,7 +12,7 @@ class PetCardList extends StatelessWidget {
       height: size.height * .8,
       child: ListView.builder(
         itemBuilder: (context, index) => const Padding(
-          padding: EdgeInsets.only(bottom: 12),
+          padding: EdgeInsets.only(bottom: 12, left: 16, right: 16),
           child: PetCard(
             petMainImage: PetImages.petMainImage,
             petBreed: 'Pé duro',

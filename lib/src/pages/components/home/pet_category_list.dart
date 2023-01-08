@@ -18,7 +18,7 @@ class PetCategoryList extends StatelessWidget {
       height: size.height * .1,
       child: ListView.builder(
         itemCount: categories.length,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
