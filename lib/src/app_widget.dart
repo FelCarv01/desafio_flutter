@@ -10,7 +10,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: petTheme(),
-      home: const Home(),
+      home: Home(),
     );
   }
 }
