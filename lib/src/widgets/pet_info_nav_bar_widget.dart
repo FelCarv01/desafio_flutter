@@ -5,7 +5,9 @@ import '../../theme/pet_colors.dart';
 class PetInfoNavBar extends StatelessWidget implements PreferredSizeWidget {
   const PetInfoNavBar({
     Key? key,
+    required this.size,
   }) : super(key: key);
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
@@ -45,5 +47,5 @@ class PetInfoNavBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(80);
+  Size get preferredSize => Size.fromHeight(size.width / 5);
 }
