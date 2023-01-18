@@ -54,7 +54,7 @@ ThemeData petTheme() {
 
   return base.copyWith(
     primaryColor: PetColors.petPrimary,
-    scaffoldBackgroundColor: PetColors.petBacgroundHome,
+    scaffoldBackgroundColor: PetColors.petPrimary,
     appBarTheme: const AppBarTheme(
       centerTitle: true,
       backgroundColor: PetColors.petPrimary,

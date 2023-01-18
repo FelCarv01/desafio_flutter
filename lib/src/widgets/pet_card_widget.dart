@@ -1,3 +1,4 @@
+import 'package:desafio_flutter/src/utils/consts.dart';
 import 'package:desafio_flutter/theme/pet_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -27,9 +28,7 @@ class PetCard extends StatelessWidget {
       child: Stack(
         children: [
           GestureDetector(
-            onTap: () {
-              // TODO(navigate): navegar para tela de detalhe
-            },
+            onTap: () {},
             child: Row(
               children: [
                 Padding(
@@ -37,7 +36,7 @@ class PetCard extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
-                      petMainImage ?? 'assets/images/62801306.jpeg',
+                      petMainImage ?? PetImages.petPlaceHolder,
                       width: 118,
                     ),
                   ),
@@ -91,7 +90,7 @@ class PetCard extends StatelessWidget {
             right: 16,
             top: 16,
             child: Icon(
-              Icons.favorite,
+              Icons.favorite_outline,
               color: PetColors.petTextGray,
             ),
           ),
