@@ -6,13 +6,19 @@ import '../utils/consts.dart';
 import '../widgets/pet_button_widget.dart';
 import '../widgets/pet_card_widget.dart';
 
-class Home extends StatelessWidget {
-  Home({super.key});
+class PetHomePage extends StatelessWidget {
+  PetHomePage({super.key});
   final categories = <String>[
     'settings', //to build a buttom tune
     'Dogs',
     'Cats',
     'Birds',
+  ];
+  final categories2 = <Map<String, dynamic>>[
+    {'name': null, 'icon': Icons.tune},
+    {'name': 'Dogs', 'icon': Icons.pets},
+    {'name': 'Cats', 'icon': Icons.pets},
+    {'name': 'Birds', 'icon': Icons.pets},
   ];
 
   @override
@@ -41,21 +47,24 @@ class Home extends StatelessWidget {
                   height: size.height * .1,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: categories.length,
+                    itemCount: categories2.length,
                     itemBuilder: (context, index) {
-                      if (index == 0) {
-                        return const Padding(
-                          padding: EdgeInsets.all(12),
-                          child: PetButton(
-                            iconData: Icons.tune,
-                          ),
-                        );
-                      }
+                      // if (index == 0) {
+                      //   return const Padding(
+                      //     padding: EdgeInsets.all(12),
+                      //     child: PetButton(
+                      //       iconData: Icons.tune,
+                      //     ),
+                      //   );
+                      // }
+                      final category = categories2[index];
+                      final name = category['name'];
+                      final icon = category['icon'];
                       return Padding(
                         padding: const EdgeInsets.all(12),
                         child: PetButton(
-                          iconData: Icons.pets,
-                          animal: categories[index],
+                          iconData: icon,
+                          animal: name,
                         ),
                       );
                     },
@@ -68,7 +77,7 @@ class Home extends StatelessWidget {
                 (context, index) => const Padding(
                   padding: EdgeInsets.only(bottom: 12, left: 16, right: 16),
                   child: PetCard(
-                    petMainImage: PetImages.petMainImage,
+                    petMainImage: PetImages.userAvatar,
                     petBreed: 'Pé duro',
                     petDescriber: 'Macho, 2 anos de idade',
                     petDistance: '2km de distancia',
