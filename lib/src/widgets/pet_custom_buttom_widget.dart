@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 
 class PetCustomButtom extends StatelessWidget {
+  final Size size;
+
   const PetCustomButtom({
     Key? key,
     required this.size,
   }) : super(key: key);
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: size.width / 6,
-        width: size.width / 2.4,
+        height: size.width * .17,
+        width: size.width * .5,
         decoration: BoxDecoration(
           color: Colors.red[400],
-          borderRadius: const BorderRadius.only(topLeft: Radius.circular(24)),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(size.width * .12),
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

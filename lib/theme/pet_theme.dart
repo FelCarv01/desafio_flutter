@@ -20,7 +20,7 @@ ThemeData petTheme() {
       headline6: base.headline6!.copyWith(
         color: PetColors.petTextBlack,
         fontFamily: 'Roboto',
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
       bodyText2: base.bodyText2!.copyWith(

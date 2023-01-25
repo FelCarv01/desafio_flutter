@@ -4,12 +4,12 @@ import '../../theme/pet_colors.dart';
 import '../utils/consts.dart';
 
 class PetInfoListImage extends StatelessWidget {
+  final Size size;
+
   const PetInfoListImage({
     Key? key,
     required this.size,
   }) : super(key: key);
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +40,42 @@ class PetInfoListImage extends StatelessWidget {
                       width: size.width * .1,
                     ),
                   ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 12,
+            bottom: 0,
+            child: Container(
+              height: size.width * .07,
+              width: size.width * .2,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: <Color>[
+                    Color.fromARGB(255, 255, 255, 255),
+                    Color.fromARGB(0, 255, 255, 255),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 12,
+            top: 0,
+            child: Container(
+              height: size.width * .07,
+              width: size.width * .2,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[
+                    Color.fromARGB(255, 255, 255, 255),
+                    Color.fromARGB(0, 255, 255, 255),
+                  ],
                 ),
               ),
             ),

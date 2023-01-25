@@ -8,6 +8,7 @@ class PetCard extends StatelessWidget {
   final String? petMainImage;
   final String petBreed;
   final String petName;
+  final String routeToInfo;
 
   const PetCard({
     super.key,
@@ -16,11 +17,13 @@ class PetCard extends StatelessWidget {
     required this.petDistance,
     required this.petBreed,
     required this.petName,
+    required this.routeToInfo,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18),
@@ -28,7 +31,8 @@ class PetCard extends StatelessWidget {
       child: Stack(
         children: [
           GestureDetector(
-            onTap: () {},
+            behavior: HitTestBehavior.translucent,
+            onTap: () => Navigator.pushNamed(context, routeToInfo),
             child: Row(
               children: [
                 Padding(

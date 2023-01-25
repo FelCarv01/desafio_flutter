@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import '../../theme/pet_colors.dart';
 
 class PetInfoNavBar extends StatelessWidget implements PreferredSizeWidget {
+  final Size size;
+
   const PetInfoNavBar({
     Key? key,
     required this.size,
   }) : super(key: key);
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () => Navigator.pop(context),
         icon: const Icon(
           Icons.navigate_before,
           color: PetColors.petTextGray,
@@ -47,5 +48,5 @@ class PetInfoNavBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(size.width / 5);
+  Size get preferredSize => Size.fromHeight(size.width * .2);
 }

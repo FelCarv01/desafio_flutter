@@ -22,11 +22,11 @@ class PetInfoHeader extends StatelessWidget {
               children: [
                 Text(
                   'PetName',
-                  style: theme.textTheme.headline6,
+                  style: theme.textTheme.headline4,
                 ),
                 const Icon(
                   Icons.male,
-                  size: 28,
+                  size: 32,
                   color: PetColors.petTextGray,
                 )
               ],
@@ -43,7 +43,7 @@ class PetInfoHeader extends StatelessWidget {
                 ),
                 Text(
                   'petDescriber',
-                  style: theme.textTheme.subtitle2,
+                  style: theme.textTheme.subtitle1,
                 ),
               ],
             ),

@@ -1,17 +1,21 @@
-import 'package:desafio_flutter/src/utils/consts.dart';
 import 'package:flutter/material.dart';
 
 class PetAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+  final String location;
+  final String assetAvatarName;
+  final Size size;
+
   const PetAppBarWidget({
     super.key,
     required this.title,
     required this.location,
+    required this.assetAvatarName,
+    required this.size,
   });
-  final String title;
-  final String location;
 
   @override
-  Size get preferredSize => const Size.fromHeight(90);
+  Size get preferredSize => Size.fromHeight(size.width * .23);
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +40,9 @@ class PetAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.only(right: 16),
           child: IconButton(
-            onPressed: () {},
-            icon: const CircleAvatar(
-              backgroundImage: AssetImage(PetImages.userAvatar),
+            onPressed: () {}, // Go to profile
+            icon: CircleAvatar(
+              backgroundImage: AssetImage(assetAvatarName),
             ),
           ),
         )
