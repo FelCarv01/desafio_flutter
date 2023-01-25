@@ -67,8 +67,9 @@ class PetHomePage extends StatelessWidget {
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
-                (context, index) => const Padding(
-                  padding: EdgeInsets.only(bottom: 12, left: 16, right: 16),
+                (context, index) => Padding(
+                  padding:
+                      const EdgeInsets.only(bottom: 12, left: 16, right: 16),
                   child: PetCard(
                     petMainImage: PetImages.userAvatar,
                     petBreed: 'Pé duro',
@@ -76,6 +77,7 @@ class PetHomePage extends StatelessWidget {
                     petDistance: '2km de distancia',
                     petName: 'De Cria',
                     routeToInfo: '/info',
+                    size: size,
                   ),
                 ),
               ),
