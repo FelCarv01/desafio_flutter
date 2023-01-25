@@ -9,6 +9,7 @@ class PetCard extends StatelessWidget {
   final String petBreed;
   final String petName;
   final String routeToInfo;
+  final Size size;
 
   const PetCard({
     super.key,
@@ -18,6 +19,7 @@ class PetCard extends StatelessWidget {
     required this.petBreed,
     required this.petName,
     required this.routeToInfo,
+    required this.size,
   });
 
   @override
@@ -41,7 +43,7 @@ class PetCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
                       petMainImage ?? PetImages.petPlaceHolder,
-                      width: 118,
+                      width: size.width * .3,
                     ),
                   ),
                 ),
@@ -51,16 +53,17 @@ class PetCard extends StatelessWidget {
                     Text(
                       petName,
                       style: theme.textTheme.headline6,
+                      softWrap: true,
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: size.width * .02,
                     ),
                     Text(
                       petBreed,
                       style: theme.textTheme.subtitle1,
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: size.width * .02,
                     ),
                     Text(
                       petDescriber,
