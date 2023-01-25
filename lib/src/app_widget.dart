@@ -1,3 +1,4 @@
+import 'package:desafio_flutter/src/pages/home.dart';
 import 'package:desafio_flutter/src/pages/info.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,11 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: petTheme(),
-      home: const PetInfoPage(),
-      //home: PetHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => PetHomePage(),
+        '/info': (context) => const PetInfoPage()
+      },
     );
   }
 }

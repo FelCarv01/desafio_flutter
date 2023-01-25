@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class PetButton extends StatelessWidget {
   final String? animal;
   final IconData iconData;
+
   const PetButton({
     super.key,
     this.animal,
@@ -19,7 +20,7 @@ class PetButton extends StatelessWidget {
         color: PetColors.petPrimary,
         borderRadius: BorderRadius.all(Radius.circular(22)),
       ),
-      child: InkWell(
+      child: GestureDetector(
         onTap: () {},
         child: Row(
           children: [

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class PetInfoAboutText extends StatelessWidget {
+  final String about;
+
   const PetInfoAboutText({
     Key? key,
     required this.about,
   }) : super(key: key);
-
-  final String about;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class PetInfoAboutText extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 12),
             child: Text(
               'About',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           Text(

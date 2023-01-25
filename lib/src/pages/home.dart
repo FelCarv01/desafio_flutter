@@ -8,13 +8,7 @@ import '../widgets/pet_card_widget.dart';
 
 class PetHomePage extends StatelessWidget {
   PetHomePage({super.key});
-  final categories = <String>[
-    'settings', //to build a buttom tune
-    'Dogs',
-    'Cats',
-    'Birds',
-  ];
-  final categories2 = <Map<String, dynamic>>[
+  final categories = <Map<String, dynamic>>[
     {'name': null, 'icon': Icons.tune},
     {'name': 'Dogs', 'icon': Icons.pets},
     {'name': 'Cats', 'icon': Icons.pets},
@@ -26,9 +20,11 @@ class PetHomePage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: const Drawer(),
-      appBar: const PetAppBarWidget(
+      appBar: PetAppBarWidget(
         location: 'AV. U2, 6634, centro',
         title: 'Location',
+        assetAvatarName: PetImages.userAvatar,
+        size: size,
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -43,31 +39,28 @@ class PetHomePage extends StatelessWidget {
             SliverList(
               delegate:
                   SliverChildBuilderDelegate(childCount: 1, (context, index) {
-                return SizedBox(
-                  height: size.height * .1,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: categories2.length,
-                    itemBuilder: (context, index) {
-                      // if (index == 0) {
-                      //   return const Padding(
-                      //     padding: EdgeInsets.all(12),
-                      //     child: PetButton(
-                      //       iconData: Icons.tune,
-                      //     ),
-                      //   );
-                      // }
-                      final category = categories2[index];
-                      final name = category['name'];
-                      final icon = category['icon'];
-                      return Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: PetButton(
-                          iconData: icon,
-                          animal: name,
-                        ),
-                      );
-                    },
+                return Padding(
+                  padding: const EdgeInsets.only(top: 12, left: 12, bottom: 12),
+                  child: SizedBox(
+                    height: size.width * .2,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: categories.length,
+                      itemBuilder: (context, index) {
+                        final category = categories[index];
+                        final name = category['name'];
+                        final icon = category['icon'];
+                        return Padding(
+                          padding: const EdgeInsets.all(
+                            12,
+                          ),
+                          child: PetButton(
+                            iconData: icon,
+                            animal: name,
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 );
               }),
@@ -82,6 +75,7 @@ class PetHomePage extends StatelessWidget {
                     petDescriber: 'Macho, 2 anos de idade',
                     petDistance: '2km de distancia',
                     petName: 'De Cria',
+                    routeToInfo: '/info',
                   ),
                 ),
               ),
