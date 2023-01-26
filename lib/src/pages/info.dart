@@ -22,23 +22,18 @@ class PetInfoPage extends StatelessWidget {
         children: [
           CustomScrollView(
             slivers: [
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: 1,
-                  (context, index) {
-                    return Column(
-                      children: [
-                        const PetInfoHeader(),
-                        PetInfoListImage(size: size),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: size.width / 5),
-                          child: const PetInfoAboutText(about: about),
-                        ),
-                      ],
-                    );
-                  },
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    const PetInfoHeader(),
+                    PetInfoListImage(size: size),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: size.width / 5),
+                      child: const PetInfoAboutText(about: about),
+                    ),
+                  ],
                 ),
-              )
+              ),
             ],
           ),
           Positioned(
